@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Movie Rating Blur Extension",
+  "version": "1.0",
+  "description": "Blur user and critics ratings by default and unblur on hover for filmweb.pl, imdb.com, and letterboxd.com.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.filmweb.pl/*", "*://*.imdb.com/*", "*://*.letterboxd.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  }
+}
